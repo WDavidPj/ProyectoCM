@@ -100,6 +100,12 @@ public class Alquilar extends javax.swing.JDialog {
 
         jLabel6.setText("Fechas de Alquiler");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, 20));
+
+        txtValorAlqui.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtValorAlquiKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtValorAlqui, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 150, -1));
 
         jLabel8.setText("Valor del Alquiler");
@@ -107,6 +113,12 @@ public class Alquilar extends javax.swing.JDialog {
 
         jLabel13.setText("Deposito");
         jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
+
+        txtDeposito.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDepositoKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtDeposito, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 150, -1));
 
         jPanel2.add(cmbCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 330, -1));
@@ -263,6 +275,28 @@ public class Alquilar extends javax.swing.JDialog {
         }
         //Crear Metodo que genere un codigo
     }//GEN-LAST:event_cmdGuardarActionPerformed
+
+    private void txtValorAlquiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtValorAlquiKeyTyped
+       char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+
+        }
+    }//GEN-LAST:event_txtValorAlquiKeyTyped
+
+    private void txtDepositoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDepositoKeyTyped
+        char c = evt.getKeyChar();
+
+        if (Character.isDigit(c) ) {
+            getToolkit().beep();
+
+            evt.consume();
+
+        }
+    }//GEN-LAST:event_txtDepositoKeyTyped
 
     /**
      * @param args the command line arguments

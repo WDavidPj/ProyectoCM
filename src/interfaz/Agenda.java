@@ -90,12 +90,22 @@ public class Agenda extends javax.swing.JDialog {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtNombre.setBackground(new java.awt.Color(153, 255, 255));
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 130, -1));
 
         txtDireccion.setBackground(new java.awt.Color(153, 255, 255));
         jPanel2.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 130, -1));
 
         txtCelular.setBackground(new java.awt.Color(153, 255, 255));
+        txtCelular.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCelularKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 130, -1));
 
         txtTelefono.setBackground(new java.awt.Color(153, 255, 255));
@@ -236,31 +246,46 @@ public class Agenda extends javax.swing.JDialog {
         } else if (rbMasculino.isSelected()) {
             sexo = sexo + "Masculino";
         }
-        ArrayList<Persona> personasModificado;
-        try {
-            if (aux == 0) {
-                Persona p = new Persona(nom, ape, direcc, cel, tel, sexo);
-                p.guardar(salida);
-            } else {
-                personasModificado = Helper.modificarPersona(ruta, nom, ape, direcc, sexo, cel, tel);
-                salida = new ObjectOutputStream(new FileOutputStream(ruta));
-                Helper.volcado(salida, personasModificado);
-                aux = 0;
-                Helper.mensaje(this, "Persona Actualizada Correctamente!", 1);
+        if (txtCelular.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse porfavor el numero de celular del cliente", 1);
+            txtCelular.requestFocusInWindow();
+        } else if (txtNombre.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse porfavor el nombre del cliente", 1);
+            txtNombre.requestFocusInWindow();
+        } else if (txtDireccion.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse porfavor la direccion del cliente", 1);
+            txtDireccion.requestFocusInWindow();
+        } else if (txtTelefono.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse porfavor el telefono del cliente", 1);
+            txtTelefono.requestFocusInWindow();
+        } else {
+
+            ArrayList<Persona> personasModificado;
+            try {
+                if (aux == 0) {
+                    Persona p = new Persona(nom, ape, direcc, cel, tel, sexo);
+                    p.guardar(salida);
+                } else {
+                    personasModificado = Helper.modificarPersona(ruta, nom, ape, direcc, sexo, cel, tel);
+                    salida = new ObjectOutputStream(new FileOutputStream(ruta));
+                    Helper.volcado(salida, personasModificado);
+                    aux = 0;
+                    Helper.mensaje(this, "Persona Actualizada Correctamente!", 1);
+                }
+
+            } catch (IOException ex) {
+                Logger.getLogger(Agenda.class.getName()).log(Level.SEVERE, null, ex);
             }
 
-        } catch (IOException ex) {
-            Logger.getLogger(Agenda.class.getName()).log(Level.SEVERE, null, ex);
+            Helper.llenarTabla(tblTabla1, ruta);
+            txtNombre.setText("");
+            txtApellido.setText("");
+            txtDireccion.setText("");
+            txtCelular.setText("");
+            txtTelefono.setText("");
+            txtNombre.requestFocusInWindow();
+            bgSexo.clearSelection();
         }
-
-        Helper.llenarTabla(tblTabla1, ruta);
-        txtNombre.setText("");
-        txtApellido.setText("");
-        txtDireccion.setText("");
-        txtCelular.setText("");
-        txtTelefono.setText("");
-        txtNombre.requestFocusInWindow();
-        bgSexo.clearSelection();
     }//GEN-LAST:event_cmdGuardarActionPerformed
 
     private void tblTabla1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTabla1MouseClicked
@@ -332,11 +357,36 @@ public class Agenda extends javax.swing.JDialog {
             txtTelefono.setText(p.getTelefono());
             bgSexo.getSelection();
             aux = 1;
-        }else{
-        txtNombre.requestFocusInWindow();
-        aux = 0;
-    }
+        } else {
+            txtNombre.requestFocusInWindow();
+            aux = 0;
+        }
     }//GEN-LAST:event_cmdBuscarActionPerformed
+
+    private void txtCelularKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCelularKeyTyped
+        //Solo numero
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+
+        }
+       
+    }//GEN-LAST:event_txtCelularKeyTyped
+
+    private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
+      //solo texto
+        char c = evt.getKeyChar();
+
+        if (Character.isDigit(c) ) {
+            getToolkit().beep();
+
+            evt.consume();
+
+        }
+    }//GEN-LAST:event_txtNombreKeyTyped
 
     /**
      * @param args the command line arguments

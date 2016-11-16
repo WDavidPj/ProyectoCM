@@ -6,7 +6,12 @@
 package interfaz;
 
 import clases.Helper;
+import clases.Persona;
 import clases.Ropa;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,10 +21,30 @@ public class Precios extends javax.swing.JDialog {
 
     /**
      * Creates new form Agenda
+     *
+     * @param parent
+     * @param modal
      */
+    String rutaP, rutaR;
+    ObjectOutputStream salida;
+    ArrayList<Ropa> ropa;
+
     public Precios(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        rutaR = "src/datos/ropa.txt";
+        rutaP = "src/datos/Personas.txt";
+        Helper.llenarComboPersonas(cmbPersonas, rutaP);
+
+        try {
+            ropa = Helper.traerDatos(rutaP);
+            salida = new ObjectOutputStream(new FileOutputStream(rutaP));
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        Helper.volcado(salida, ropa);
+
     }
 
     /**
@@ -34,7 +59,6 @@ public class Precios extends javax.swing.JDialog {
         bgSexo = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        txtcolordeTela = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -52,6 +76,7 @@ public class Precios extends javax.swing.JDialog {
         cmbModa = new javax.swing.JComboBox();
         cmbCorredera = new javax.swing.JComboBox();
         jLabel5 = new javax.swing.JLabel();
+        cmbPersonas = new javax.swing.JComboBox();
         jPanel3 = new javax.swing.JPanel();
         cmdGuardar = new javax.swing.JButton();
         cmdCancelar = new javax.swing.JButton();
@@ -68,7 +93,6 @@ public class Precios extends javax.swing.JDialog {
         jPanel2.setBackground(new java.awt.Color(255, 255, 102));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)), "Datos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.BELOW_TOP, null, new java.awt.Color(0, 0, 0)));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(txtcolordeTela, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 130, -1));
 
         jLabel1.setText("Hilos");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, -1, -1));
@@ -120,6 +144,8 @@ public class Precios extends javax.swing.JDialog {
 
         jLabel5.setText("Corredera");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, -1, 20));
+
+        jPanel2.add(cmbPersonas, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 260, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 420, 220));
 
@@ -187,9 +213,9 @@ public class Precios extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmdGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdGuardarActionPerformed
-        String color, tipo, metro, sexo, talla, hilo, boton, moda, corredera;
-
-        color = txtcolordeTela.getText();
+        String auxPersona, celular,tipo, metro, sexo, talla, hilo, boton, moda, corredera;
+        int indice;
+        Persona personas;
         tipo = cmbTipodeTela.getSelectedItem().toString();
         metro = cmbmetrodeTela.getSelectedItem().toString();
         sexo = cmbSexo.getSelectedItem().toString();
@@ -198,10 +224,14 @@ public class Precios extends javax.swing.JDialog {
         boton = cmbBotones.getSelectedItem().toString();
         moda = cmbModa.getSelectedItem().toString();
         corredera = cmbCorredera.getSelectedItem().toString();
-
-        Ropa r = new Ropa (color , tipo , metro , sexo , talla , hilo , boton , moda , corredera);
         
-        txtcolordeTela.setText("");
+        auxPersona = cmbPersonas.getSelectedItem().toString();
+        indice = auxPersona.indexOf("-") - 1;
+        celular = auxPersona.substring(indice);
+        personas = Helper.traerPersonaCelular(celular, rutaP);
+        
+        Ropa r = new Ropa(personas, tipo, metro, sexo, talla, hilo, boton, moda, corredera);
+
         cmbBotones.setSelectedIndex(0);
         cmbCorredera.setSelectedIndex(0);
         cmbHilos.setSelectedIndex(0);
@@ -210,11 +240,9 @@ public class Precios extends javax.swing.JDialog {
         cmbTalla.setSelectedIndex(0);
         cmbTipodeTela.setSelectedIndex(0);
         cmbmetrodeTela.setSelectedIndex(0);
-        txtcolordeTela.requestFocusInWindow();
     }//GEN-LAST:event_cmdGuardarActionPerformed
 
     private void cmdCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCancelarActionPerformed
-        txtcolordeTela.setText("");
         cmbBotones.setSelectedIndex(0);
         cmbCorredera.setSelectedIndex(0);
         cmbHilos.setSelectedIndex(0);
@@ -223,7 +251,6 @@ public class Precios extends javax.swing.JDialog {
         cmbTalla.setSelectedIndex(0);
         cmbTipodeTela.setSelectedIndex(0);
         cmbmetrodeTela.setSelectedIndex(0);
-        txtcolordeTela.requestFocusInWindow();
     }//GEN-LAST:event_cmdCancelarActionPerformed
 
     private void cmdCotizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCotizarActionPerformed
@@ -279,6 +306,7 @@ public class Precios extends javax.swing.JDialog {
     private javax.swing.JComboBox cmbCorredera;
     private javax.swing.JComboBox cmbHilos;
     private javax.swing.JComboBox cmbModa;
+    private javax.swing.JComboBox cmbPersonas;
     private javax.swing.JComboBox cmbSexo;
     private javax.swing.JComboBox cmbTalla;
     private javax.swing.JComboBox cmbTipodeTela;
@@ -301,6 +329,5 @@ public class Precios extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JTextField txtPrecio;
-    private javax.swing.JTextField txtcolordeTela;
     // End of variables declaration//GEN-END:variables
 }

@@ -14,7 +14,6 @@ import java.io.ObjectOutputStream;
  */
 public class Ropa implements java.io.Serializable {
 
-    private String TelaColor;
     private String TipodeTela;
     private String MetrodeTela;
     private String Sexo;
@@ -23,9 +22,10 @@ public class Ropa implements java.io.Serializable {
     private String Botones;
     private String Moda;
     private String Corredera;
+    private Persona personas;
 
-    public Ropa(String TelaColor, String TipodeTela, String MetrodeTela, String Sexo, String Talla, String Hilo, String Botones, String Moda, String Corredera) {
-        this.TelaColor = TelaColor;
+    public Ropa(String TipodeTela, String MetrodeTela, String Sexo, String Talla, String Hilo, String Botones, String Moda, String Corredera, Persona personas ) {
+
         this.TipodeTela = TipodeTela;
         this.MetrodeTela = MetrodeTela;
         this.Sexo = Sexo;
@@ -34,16 +34,17 @@ public class Ropa implements java.io.Serializable {
         this.Botones = Botones;
         this.Moda = Moda;
         this.Corredera = Corredera;
+        this.personas = personas;
     }
 
-    public String getTelaColor() {
-        return TelaColor;
+    public Ropa(Persona personas, String tipo, String metro, String sexo, String talla, String hilo, String boton, String moda, String corredera) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    public void setTelaColor(String TelaColor) {
-        this.TelaColor = TelaColor;
+/*
+    public Ropa(Persona persona, String tipo, String metro, String sexo, String talla, String hilo, String boton, String moda, String corredera) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+*/
     public String getTipodeTela() {
         return TipodeTela;
     }
@@ -108,8 +109,14 @@ public class Ropa implements java.io.Serializable {
         this.Corredera = Corredera;
     }
 
-    
-    
+    public Persona getPersonas() {
+        return personas;
+    }
+
+    public void setPersonas(Persona personas) {
+        this.personas = personas;
+    }
+
     public void guardar(ObjectOutputStream salida) throws IOException {
         salida.writeObject(this);
 

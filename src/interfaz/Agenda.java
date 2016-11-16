@@ -98,6 +98,11 @@ public class Agenda extends javax.swing.JDialog {
         jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 130, -1));
 
         txtDireccion.setBackground(new java.awt.Color(153, 255, 255));
+        txtDireccion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDireccionKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 130, -1));
 
         txtCelular.setBackground(new java.awt.Color(153, 255, 255));
@@ -109,6 +114,11 @@ public class Agenda extends javax.swing.JDialog {
         jPanel2.add(txtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 130, -1));
 
         txtTelefono.setBackground(new java.awt.Color(153, 255, 255));
+        txtTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTelefonoKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 130, -1));
 
         jLabel1.setText("Telefono");
@@ -124,6 +134,11 @@ public class Agenda extends javax.swing.JDialog {
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
         txtApellido.setBackground(new java.awt.Color(153, 255, 255));
+        txtApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtApellidoKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 130, -1));
 
         jLabel5.setText("Apellido");
@@ -387,6 +402,33 @@ public class Agenda extends javax.swing.JDialog {
 
         }
     }//GEN-LAST:event_txtNombreKeyTyped
+
+    private void txtApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoKeyTyped
+      char c = evt.getKeyChar();
+
+        if (Character.isDigit(c) ) {
+            getToolkit().beep();
+
+            evt.consume();
+
+        }
+    }//GEN-LAST:event_txtApellidoKeyTyped
+
+    private void txtTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyTyped
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+
+        }
+       
+    }//GEN-LAST:event_txtTelefonoKeyTyped
+
+    private void txtDireccionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDireccionKeyTyped
+        
+    }//GEN-LAST:event_txtDireccionKeyTyped
 
     /**
      * @param args the command line arguments

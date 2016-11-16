@@ -97,7 +97,7 @@ public class Precios extends javax.swing.JDialog {
         jLabel1.setText("Hilos");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, -1, -1));
 
-        jLabel9.setText("Color de Tela");
+        jLabel9.setText("Cliente");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         jLabel10.setText("Tipo de Tela");

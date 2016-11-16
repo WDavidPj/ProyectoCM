@@ -256,28 +256,35 @@ public class Alquilar extends javax.swing.JDialog {
         ArrayList<Alquiler> alquileresModificado;
         persona = Helper.traerPersonaCelular(celular, rutaC);
         togas = Helper.traerToga(color, rutaT);
-        
-        try {
-            if (aux == 0) {
-                System.out.println("va bien");
-                Alquiler a = new Alquiler(fechadeentrega, fechadealquiler, valor, depo, persona, togas);
-                // a.guardar(salida);
-            } else {
-                alquileresModificado = Helper.modificarAlquiler(rutaAl, valor, fechadeentrega, fechadealquiler, depo);
-                salida = new ObjectOutputStream(new FileOutputStream(rutaAl));
-                Helper.volcado(salida, alquileresModificado);
-                aux = 0;
-                Helper.mensaje(this, "Alquiler Actualizado", 1);
-            }
+        if (txtDeposito.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Ingrese el deposito", 2);
+            txtDeposito.requestFocusInWindow();
+        } else if (txtValorAlqui.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Ingrese el valor del alquiler", 2);
+            txtValorAlqui.requestFocusInWindow();
+        } else {
 
-        } catch (IOException ex) {
-            Logger.getLogger(Alquilar.class.getName()).log(Level.SEVERE, null, ex);
+            try {
+                if (aux == 0) {
+                    System.out.println("va bien");
+                    Alquiler a = new Alquiler(fechadeentrega, fechadealquiler, valor, depo, persona, togas);
+                    // a.guardar(salida);
+                } else {
+                    alquileresModificado = Helper.modificarAlquiler(rutaAl, valor, fechadeentrega, fechadealquiler, depo);
+                    salida = new ObjectOutputStream(new FileOutputStream(rutaAl));
+                    Helper.volcado(salida, alquileresModificado);
+                    aux = 0;
+                    Helper.mensaje(this, "Alquiler Actualizado", 1);
+                }
+
+            } catch (IOException ex) {
+                Logger.getLogger(Alquilar.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-        //Crear Metodo que genere un codigo
     }//GEN-LAST:event_cmdGuardarActionPerformed
 
     private void txtValorAlquiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtValorAlquiKeyTyped
-       char c = evt.getKeyChar();
+        char c = evt.getKeyChar();
 
         if (!Character.isDigit(c)) {
             getToolkit().beep();

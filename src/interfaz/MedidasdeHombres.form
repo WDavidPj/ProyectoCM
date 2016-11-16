@@ -75,6 +75,9 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JTextField" name="txtPecho">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPechoKeyTyped"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="150" y="120" width="50" height="-1"/>
@@ -82,6 +85,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="txtCintura">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCinturaKeyTyped"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="150" y="150" width="50" height="-1"/>
@@ -89,6 +95,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="txtBase">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtBaseKeyTyped"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="150" y="180" width="50" height="-1"/>
@@ -136,6 +145,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="txtTalleTrasero">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTalleTraseroKeyTyped"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="150" y="90" width="50" height="-1"/>
@@ -153,6 +165,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="txtTalleDelantero">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTalleDelanteroKeyTyped"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="310" y="60" width="50" height="-1"/>
@@ -170,6 +185,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="txtEspalda">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtEspaldaKeyTyped"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="150" y="60" width="50" height="-1"/>
@@ -197,6 +215,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="txtLargodeManga">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtLargodeMangaKeyTyped"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="310" y="90" width="50" height="-1"/>
@@ -204,6 +225,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="txtPu&#xf1;os">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPu&#xf1;osKeyTyped"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="310" y="120" width="50" height="-1"/>
@@ -221,6 +245,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="txtLargodePantalon">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtLargodePantalonKeyTyped"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="310" y="150" width="50" height="-1"/>
@@ -228,6 +255,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="txtLargodeCamisa">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtLargodeCamisaKeyTyped"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="490" y="150" width="50" height="-1"/>
@@ -265,6 +295,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="txtAltodeRodilla">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtAltodeRodillaKeyTyped"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="310" y="180" width="50" height="-1"/>
@@ -272,6 +305,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="txtAnchodeRodilla">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtAnchodeRodillaKeyTyped"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="490" y="60" width="50" height="-1"/>
@@ -289,6 +325,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="txtAnchodePierna">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtAnchodePiernaKeyTyped"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="490" y="90" width="50" height="-1"/>
@@ -306,6 +345,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="txtContornoCuello">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtContornoCuelloKeyTyped"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="490" y="120" width="50" height="-1"/>

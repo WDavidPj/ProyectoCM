@@ -96,8 +96,20 @@ public class InventariodeUniformes extends javax.swing.JDialog {
         jPanel2.setBackground(new java.awt.Color(255, 204, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)), "Datos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.BELOW_TOP, null, new java.awt.Color(0, 0, 0)));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtNombredeColegio.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombredeColegioKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtNombredeColegio, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 100, -1));
         jPanel2.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 100, -1));
+
+        txtTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTelefonoKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 100, -1));
 
         jLabel1.setText("Telefono");
@@ -267,33 +279,40 @@ public class InventariodeUniformes extends javax.swing.JDialog {
         } else if (rbMasculino.isSelected()) {
             sexo = sexo + "Masculino";
         }
-        ArrayList<Uniformes> uniformeModificado;
-        try {
-            if (aux == 0) {
-                Uniformes u = new Uniformes(nombrecole, direccion, cuello, bordado, tipo, telefono, estanpado, escudo, puños, sexo);
-                u.guardar(salida);
-            } else {
-                uniformeModificado = Helper.modificarUniforme(ruta, nombrecole, telefono, cuello, sexo, direccion, tipo, bordado, tipo, escudo, puños);
-                salida = new ObjectOutputStream(new FileOutputStream(ruta));
-                Helper.volcado(salida, uniformeModificado);
-                aux = 0;
-                Helper.mensaje(this, "Uniforme Actualizado Correctamente!", 1);
+        if (txtDireccion.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse la direccion del colegio", 1);
+        } else if (txtNombredeColegio.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "increse el nombre del colegio", aux);
+        } else if (txtTelefono.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "increse el telefono del colegio", aux);
+        } else {
+            ArrayList<Uniformes> uniformeModificado;
+            try {
+                if (aux == 0) {
+                    Uniformes u = new Uniformes(nombrecole, direccion, cuello, bordado, tipo, telefono, estanpado, escudo, puños, sexo);
+                    u.guardar(salida);
+                } else {
+                    uniformeModificado = Helper.modificarUniforme(ruta, nombrecole, telefono, cuello, sexo, direccion, tipo, bordado, tipo, escudo, puños);
+                    salida = new ObjectOutputStream(new FileOutputStream(ruta));
+                    Helper.volcado(salida, uniformeModificado);
+                    aux = 0;
+                    Helper.mensaje(this, "Uniforme Actualizado Correctamente!", 1);
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(Agenda.class.getName()).log(Level.SEVERE, null, ex);
             }
-        } catch (IOException ex) {
-            Logger.getLogger(Agenda.class.getName()).log(Level.SEVERE, null, ex);
+            Helper.llenarTablaUniformes(tblTabla1, ruta);
+            txtDireccion.setText("");
+            txtNombredeColegio.setText("");
+            txtTelefono.setText("");
+            cmbBordado.setSelectedItem(0);
+            cmbCuello.setSelectedItem(0);
+            cmbEscudo.setSelectedItem(0);
+            cmbEstanpado.setSelectedItem(0);
+            cmbPuños.setSelectedItem(0);
+            cmbTipo.setSelectedItem(0);
+            bgSexo.clearSelection();
         }
-        Helper.llenarTablaUniformes(tblTabla1, ruta);
-        txtDireccion.setText("");
-        txtNombredeColegio.setText("");
-        txtTelefono.setText("");
-        cmbBordado.setSelectedItem(0);
-        cmbCuello.setSelectedItem(0);
-        cmbEscudo.setSelectedItem(0);
-        cmbEstanpado.setSelectedItem(0);
-        cmbPuños.setSelectedItem(0);
-        cmbTipo.setSelectedItem(0);
-        bgSexo.clearSelection();
-
     }//GEN-LAST:event_cmdGuardarActionPerformed
 
     private void tblTabla1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTabla1MouseClicked
@@ -373,6 +392,28 @@ public class InventariodeUniformes extends javax.swing.JDialog {
             aux = 0;
         }
     }//GEN-LAST:event_cmdBuscarActionPerformed
+
+    private void txtNombredeColegioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombredeColegioKeyTyped
+        char c = evt.getKeyChar();
+
+        if (Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombredeColegioKeyTyped
+
+    private void txtTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyTyped
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelefonoKeyTyped
 
     /**
      * @param args the command line arguments

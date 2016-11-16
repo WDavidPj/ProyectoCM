@@ -108,8 +108,26 @@ public class MedidasdeHombres extends javax.swing.JDialog {
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)), "Medidas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.BELOW_TOP, null, new java.awt.Color(0, 0, 0)));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtPecho.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPechoKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtPecho, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 50, -1));
+
+        txtCintura.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCinturaKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtCintura, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 50, -1));
+
+        txtBase.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBaseKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtBase, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 50, -1));
 
         jLabel1.setText("Base");
@@ -123,14 +141,32 @@ public class MedidasdeHombres extends javax.swing.JDialog {
 
         jLabel4.setText("Cintura");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, -1));
+
+        txtTalleTrasero.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTalleTraseroKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtTalleTrasero, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 50, -1));
 
         jLabel5.setText("Talle Trasero");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, -1, -1));
+
+        txtTalleDelantero.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTalleDelanteroKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtTalleDelantero, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, 50, -1));
 
         jLabel8.setText("Talle Delantero");
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, -1, -1));
+
+        txtEspalda.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtEspaldaKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtEspalda, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 50, -1));
 
         jLabel10.setText("Espalda");
@@ -138,12 +174,36 @@ public class MedidasdeHombres extends javax.swing.JDialog {
 
         jLabel12.setText("Largo de Manga");
         jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, -1, -1));
+
+        txtLargodeManga.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtLargodeMangaKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtLargodeManga, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 50, -1));
+
+        txtPuños.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPuñosKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtPuños, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 50, -1));
 
         jLabel13.setText("Puño");
         jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, -1, -1));
+
+        txtLargodePantalon.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtLargodePantalonKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtLargodePantalon, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 50, -1));
+
+        txtLargodeCamisa.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtLargodeCamisaKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtLargodeCamisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 150, 50, -1));
 
         jLabel14.setText("Largo de Camisa");
@@ -154,15 +214,39 @@ public class MedidasdeHombres extends javax.swing.JDialog {
 
         jLabel16.setText("Alto de Rodilla");
         jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, -1, -1));
+
+        txtAltodeRodilla.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtAltodeRodillaKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtAltodeRodilla, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, 50, -1));
+
+        txtAnchodeRodilla.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtAnchodeRodillaKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtAnchodeRodilla, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 60, 50, -1));
 
         jLabel19.setText("Ancho de Rodilla");
         jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, -1, -1));
+
+        txtAnchodePierna.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtAnchodePiernaKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtAnchodePierna, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 50, -1));
 
         jLabel20.setText("Ancho de Pierna");
         jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, -1, -1));
+
+        txtContornoCuello.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtContornoCuelloKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtContornoCuello, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 120, 50, -1));
 
         jLabel21.setText("Contorno de cuello");
@@ -280,44 +364,88 @@ public class MedidasdeHombres extends javax.swing.JDialog {
         puno = txtPuños.getText();
         largodecamisa = txtLargodeCamisa.getText();
         contorcuello = txtContornoCuello.getText();
-        
+
         auxPersona = cmbPersonas.getSelectedItem().toString();
         indice = auxPersona.indexOf("-") - 1;
         celular = auxPersona.substring(0, indice);
         ArrayList<MedidasdeHombre> medidasModificado;
         personas = Helper.traerPersonaCelular(celular, rutaP);
-        try {
-            if (aux == 0) {
-                MedidasdeHombre m = new MedidasdeHombre(talletra, talledela, pecho, altorodi, anchopier, espalda, anchoderodi, cintura, base, largodepanta, largodemanga, puno, largodecamisa, contorcuello, personas);
-                m.guardar(salida);
-            } else {
-                medidasModificado = Helper.modificarMedidasdeHombre(ruta, talletra, talledela, pecho, altorodi, anchopier, espalda, anchoderodi, cintura, base, largodepanta, largodemanga, puno, largodecamisa, contorcuello);
-                salida = new ObjectOutputStream(new FileOutputStream(rutaP));
-                Helper.volcado(salida, medidasModificado);
-                aux = 0;
-                Helper.mensaje(this, "Medidas Actualizado Correctamente", 1);
-            }
+        if (txtAltodeRodilla.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad de alto de rodilla ", 1);
+            txtAltodeRodilla.requestFocusInWindow();
+        } else if (txtAnchodePierna.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad de ancho de pierna ", 1);
+            txtAnchodePierna.requestFocusInWindow();
+        } else if (txtAnchodeRodilla.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad de ancho de rodilla ", 1);
+            txtAnchodeRodilla.requestFocusInWindow();
+        } else if (txtBase.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad de la base ", 1);
+            txtBase.requestFocusInWindow();
+        } else if (txtCintura.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad de la cintura ", 1);
+            txtCintura.requestFocusInWindow();
+        } else if (txtContornoCuello.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad del contorno del cuello ", 1);
+            txtContornoCuello.requestFocusInWindow();
+        } else if (txtEspalda.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad de espalda ", 1);
+            txtEspalda.requestFocusInWindow();
+        } else if (txtLargodeCamisa.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad del largo de camisa ", 1);
+            txtLargodeCamisa.requestFocusInWindow();
+        } else if (txtLargodeManga.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad del largo de manga ", 1);
+            txtLargodeManga.requestFocusInWindow();
+        } else if (txtLargodePantalon.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad de largo de pantalon ", 1);
+            txtLargodePantalon.requestFocusInWindow();
+        } else if (txtPecho.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad del pecho ", 1);
+            txtPecho.requestFocusInWindow();
+        } else if (txtPuños.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad de los puños ", 1);
+            txtPuños.requestFocusInWindow();
+        } else if (txtTalleDelantero.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad del talle delantero ", 1);
+            txtTalleDelantero.requestFocusInWindow();
+        } else if (txtTalleTrasero.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad del talle trasero ", 1);
+            txtTalleTrasero.requestFocusInWindow();
+        } else {
+            try {
+                if (aux == 0) {
+                    MedidasdeHombre m = new MedidasdeHombre(talletra, talledela, pecho, altorodi, anchopier, espalda, anchoderodi, cintura, base, largodepanta, largodemanga, puno, largodecamisa, contorcuello, personas);
+                    m.guardar(salida);
+                } else {
+                    medidasModificado = Helper.modificarMedidasdeHombre(ruta, talletra, talledela, pecho, altorodi, anchopier, espalda, anchoderodi, cintura, base, largodepanta, largodemanga, puno, largodecamisa, contorcuello);
+                    salida = new ObjectOutputStream(new FileOutputStream(rutaP));
+                    Helper.volcado(salida, medidasModificado);
+                    aux = 0;
+                    Helper.mensaje(this, "Medidas Actualizado Correctamente", 1);
+                }
 
-        } catch (IOException ex) {
-            Logger.getLogger(MedidasdeHombres.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        Helper.llenarTablaHombre(tblTabla1, ruta);
-        txtAltodeRodilla.setText("");
-        txtAnchodePierna.setText("");
-        txtAnchodeRodilla.setText("");
-        txtPecho.setText("");
-        txtBase.setText("");
-        txtCintura.setText("");
-        txtEspalda.setText("");
-        txtLargodeCamisa.setText("");
-        txtLargodeManga.setText("");
-        txtLargodePantalon.setText("");
-        cmbPersonas.setSelectedIndex(0);
-        txtTalleDelantero.setText("");
-        txtPuños.setText("");
-        txtTalleTrasero.setText("");
-        txtContornoCuello.setText("");
-        //llenarTabla
+            } catch (IOException ex) {
+                Logger.getLogger(MedidasdeHombres.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            Helper.llenarTablaHombre(tblTabla1, ruta);
+            txtAltodeRodilla.setText("");
+            txtAnchodePierna.setText("");
+            txtAnchodeRodilla.setText("");
+            txtPecho.setText("");
+            txtBase.setText("");
+            txtCintura.setText("");
+            txtEspalda.setText("");
+            txtLargodeCamisa.setText("");
+            txtLargodeManga.setText("");
+            txtLargodePantalon.setText("");
+            cmbPersonas.setSelectedIndex(0);
+            txtTalleDelantero.setText("");
+            txtPuños.setText("");
+            txtTalleTrasero.setText("");
+            txtContornoCuello.setText("");
+
+        }//llenarTabla
     }//GEN-LAST:event_cmdNuevoActionPerformed
 
     private void tblTabla1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTabla1MouseClicked
@@ -342,7 +470,7 @@ public class MedidasdeHombres extends javax.swing.JDialog {
         txtPuños.setText(m.getPuño());
         txtTalleDelantero.setText(m.getTalleDelantero());
         txtTalleTrasero.setText(m.getTalleTrasero());
-        
+
 
     }//GEN-LAST:event_tblTabla1MouseClicked
 
@@ -412,6 +540,160 @@ public class MedidasdeHombres extends javax.swing.JDialog {
             aux = 0;
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtEspaldaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEspaldaKeyTyped
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEspaldaKeyTyped
+
+    private void txtTalleTraseroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTalleTraseroKeyTyped
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTalleTraseroKeyTyped
+
+    private void txtPechoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPechoKeyTyped
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPechoKeyTyped
+
+    private void txtCinturaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCinturaKeyTyped
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCinturaKeyTyped
+
+    private void txtBaseKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBaseKeyTyped
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBaseKeyTyped
+
+    private void txtTalleDelanteroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTalleDelanteroKeyTyped
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTalleDelanteroKeyTyped
+
+    private void txtLargodeMangaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLargodeMangaKeyTyped
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtLargodeMangaKeyTyped
+
+    private void txtPuñosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPuñosKeyTyped
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPuñosKeyTyped
+
+    private void txtLargodePantalonKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLargodePantalonKeyTyped
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtLargodePantalonKeyTyped
+
+    private void txtAltodeRodillaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltodeRodillaKeyTyped
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAltodeRodillaKeyTyped
+
+    private void txtAnchodeRodillaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAnchodeRodillaKeyTyped
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAnchodeRodillaKeyTyped
+
+    private void txtAnchodePiernaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAnchodePiernaKeyTyped
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAnchodePiernaKeyTyped
+
+    private void txtContornoCuelloKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtContornoCuelloKeyTyped
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtContornoCuelloKeyTyped
+
+    private void txtLargodeCamisaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLargodeCamisaKeyTyped
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_txtLargodeCamisaKeyTyped
 
     /**
      * @param args the command line arguments

@@ -221,6 +221,19 @@ public class Cliente extends javax.swing.JDialog {
         } else if (rbMasculino.isSelected()) {
             sexo = sexo + "Masculino";
         }
+        if (txtCelular.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse porfavor el numero de celular del cliente", 1);
+            txtCelular.requestFocusInWindow();
+        } else if (txtNombre.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse porfavor el nombre del cliente", 1);
+            txtNombre.requestFocusInWindow();
+        } else if (txtDireccion.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse porfavor la direccion del cliente", 1);
+            txtDireccion.requestFocusInWindow();
+        } else if (txtTelefono.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse porfavor el telefono del cliente", 1);
+            txtTelefono.requestFocusInWindow();
+        }else{
         ArrayList<Persona> ClienteModificado;
         try {
             if (aux == 0) {
@@ -246,7 +259,7 @@ public class Cliente extends javax.swing.JDialog {
         txtTelefono.setText("");
         txtNombre.requestFocusInWindow();
         bgSexo.clearSelection();
-
+        }
     }//GEN-LAST:event_cmdGuardarActionPerformed
 
     private void cmdEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdEliminarActionPerformed

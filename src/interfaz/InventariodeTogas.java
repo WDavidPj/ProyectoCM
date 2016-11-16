@@ -91,6 +91,12 @@ public class InventariodeTogas extends javax.swing.JDialog {
         jPanel2.setBackground(new java.awt.Color(204, 255, 204));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)), "Datos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.BELOW_TOP, null, new java.awt.Color(0, 0, 0)));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtColor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtColorKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 100, -1));
 
         jLabel2.setText("Color");
@@ -129,7 +135,18 @@ public class InventariodeTogas extends javax.swing.JDialog {
                 txtCantCamisasActionPerformed(evt);
             }
         });
+        txtCantCamisas.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCantCamisasKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtCantCamisas, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 100, -1));
+
+        txtCantBirete.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCantBireteKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtCantBirete, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 100, -1));
 
         txtCantBufandas.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -357,8 +374,51 @@ public class InventariodeTogas extends javax.swing.JDialog {
     }//GEN-LAST:event_cmdBuscarActionPerformed
 
     private void txtCantBufandasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantBufandasKeyTyped
-        
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+
+        }
+
     }//GEN-LAST:event_txtCantBufandasKeyTyped
+
+    private void txtColorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtColorKeyTyped
+        char c = evt.getKeyChar();
+
+        if (Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+
+        }
+    }//GEN-LAST:event_txtColorKeyTyped
+
+    private void txtCantBireteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantBireteKeyTyped
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCantBireteKeyTyped
+
+    private void txtCantCamisasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantCamisasKeyTyped
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCantCamisasKeyTyped
 
     /**
      * @param args the command line arguments

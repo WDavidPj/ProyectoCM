@@ -290,7 +290,7 @@ public class Alquilar extends javax.swing.JDialog {
     private void txtDepositoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDepositoKeyTyped
         char c = evt.getKeyChar();
 
-        if (Character.isDigit(c) ) {
+        if (!Character.isDigit(c)) {
             getToolkit().beep();
 
             evt.consume();

@@ -12,6 +12,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import javax.swing.JButton;
 
 /**
  *
@@ -32,6 +33,11 @@ public class Precios extends javax.swing.JDialog {
     public Precios(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        JButton botonesH[] = {cmdGuardar, cmdCancelar};
+        JButton botonesD[] = {cmdCotizar};
+
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
         rutaR = "src/datos/ropa.txt";
         rutaP = "src/datos/Personas.txt";
         Helper.llenarComboPersonas(cmbPersonas, rutaP);
@@ -213,6 +219,7 @@ public class Precios extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmdGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdGuardarActionPerformed
+      /*
         String auxPersona, celular,tipo, metro, sexo, talla, hilo, boton, moda, corredera;
         int indice;
         Persona personas;
@@ -240,6 +247,13 @@ public class Precios extends javax.swing.JDialog {
         cmbTalla.setSelectedIndex(0);
         cmbTipodeTela.setSelectedIndex(0);
         cmbmetrodeTela.setSelectedIndex(0);
+       */
+        JButton botonesH[] = {cmdCotizar, cmdCancelar};
+        JButton botonesD[] = {cmdGuardar};
+
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
+        
     }//GEN-LAST:event_cmdGuardarActionPerformed
 
     private void cmdCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCancelarActionPerformed
@@ -251,10 +265,21 @@ public class Precios extends javax.swing.JDialog {
         cmbTalla.setSelectedIndex(0);
         cmbTipodeTela.setSelectedIndex(0);
         cmbmetrodeTela.setSelectedIndex(0);
+        JButton botonesH[] = {cmdGuardar, cmdCancelar};
+        JButton botonesD[] = {cmdCotizar};
+
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
     }//GEN-LAST:event_cmdCancelarActionPerformed
 
     private void cmdCotizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCotizarActionPerformed
 
+        
+        JButton botonesH[] = {cmdCancelar};
+        JButton botonesD[] = {cmdCotizar , cmdGuardar};
+
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
     }//GEN-LAST:event_cmdCotizarActionPerformed
 
     /**

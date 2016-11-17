@@ -14,6 +14,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 /**
@@ -33,7 +34,13 @@ public class Agenda extends javax.swing.JDialog {
     public Agenda(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        JButton botonesH[] = {cmdCancelar, cmdBuscar, cmdEliminar};
+        JButton botonesD[] = {cmdGuardar};
+
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
         ruta = "src/datos/Personas.txt";
+
         try {
             personas = Helper.traerDatos(ruta);
             salida = new ObjectOutputStream(new FileOutputStream(ruta));
@@ -301,6 +308,11 @@ public class Agenda extends javax.swing.JDialog {
             txtNombre.requestFocusInWindow();
             bgSexo.clearSelection();
         }
+        JButton botonesH[] = {cmdCancelar, cmdBuscar, cmdEliminar};
+        JButton botonesD[] = {cmdGuardar};
+
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
     }//GEN-LAST:event_cmdGuardarActionPerformed
 
     private void tblTabla1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTabla1MouseClicked
@@ -319,6 +331,11 @@ public class Agenda extends javax.swing.JDialog {
         bgSexo.setSelected(null, true);
         aux = 1;
 
+        JButton botonesH[] = {cmdCancelar,cmdEliminar};
+        JButton botonesD[] = {cmdGuardar, cmdBuscar };
+
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
     }//GEN-LAST:event_tblTabla1MouseClicked
 
     private void cmdEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdEliminarActionPerformed
@@ -347,7 +364,11 @@ public class Agenda extends javax.swing.JDialog {
             txtTelefono.setText("");
             txtNombre.requestFocusInWindow();
         }
+        JButton botonesH[] = {cmdBuscar, cmdCancelar };
+        JButton botonesD[] = {cmdEliminar , cmdGuardar};
 
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
     }//GEN-LAST:event_cmdEliminarActionPerformed
 
     private void cmdCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCancelarActionPerformed
@@ -358,6 +379,11 @@ public class Agenda extends javax.swing.JDialog {
         txtTelefono.setText("");
         txtNombre.requestFocusInWindow();
         bgSexo.clearSelection();
+        JButton botonesH[] = {cmdGuardar, cmdBuscar, cmdCancelar, cmdEliminar};
+        JButton botonesD[] = {};
+
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
     }//GEN-LAST:event_cmdCancelarActionPerformed
 
     private void cmdBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBuscarActionPerformed
@@ -376,6 +402,11 @@ public class Agenda extends javax.swing.JDialog {
             txtNombre.requestFocusInWindow();
             aux = 0;
         }
+        JButton botonesH[] = {cmdGuardar, cmdBuscar, cmdCancelar};
+        JButton botonesD[] = {cmdEliminar};
+
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
     }//GEN-LAST:event_cmdBuscarActionPerformed
 
     private void txtCelularKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCelularKeyTyped
@@ -388,14 +419,14 @@ public class Agenda extends javax.swing.JDialog {
             evt.consume();
 
         }
-       
+
     }//GEN-LAST:event_txtCelularKeyTyped
 
     private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
-      //solo texto
+        //solo texto
         char c = evt.getKeyChar();
 
-        if (Character.isDigit(c) ) {
+        if (Character.isDigit(c)) {
             getToolkit().beep();
 
             evt.consume();
@@ -404,9 +435,9 @@ public class Agenda extends javax.swing.JDialog {
     }//GEN-LAST:event_txtNombreKeyTyped
 
     private void txtApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoKeyTyped
-      char c = evt.getKeyChar();
+        char c = evt.getKeyChar();
 
-        if (Character.isDigit(c) ) {
+        if (Character.isDigit(c)) {
             getToolkit().beep();
 
             evt.consume();
@@ -423,11 +454,11 @@ public class Agenda extends javax.swing.JDialog {
             evt.consume();
 
         }
-       
+
     }//GEN-LAST:event_txtTelefonoKeyTyped
 
     private void txtDireccionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDireccionKeyTyped
-        
+
     }//GEN-LAST:event_txtDireccionKeyTyped
 
     /**

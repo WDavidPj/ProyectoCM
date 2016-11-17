@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JButton;
 
 /**
  *
@@ -34,6 +35,11 @@ public class Alquilar extends javax.swing.JDialog {
     public Alquilar(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        JButton botonesH[] = {cmdCancelar, cmdIngresarCliente, cmdEliminar};
+        JButton botonesD[] = {cmdGuardar};
+
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
         //Inventario de las Togas
         rutaT = "src/datos/InventariodeTogas.bin";
         //Alquileres
@@ -217,6 +223,11 @@ public class Alquilar extends javax.swing.JDialog {
     private void cmdIngresarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdIngresarClienteActionPerformed
         Cliente c = new Cliente(null, true);
         c.setVisible(true);
+        JButton botonesH[] = {cmdCancelar, cmdEliminar, cmdGuardar};
+        JButton botonesD[] = { cmdIngresarCliente};
+
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
     }//GEN-LAST:event_cmdIngresarClienteActionPerformed
 
     private void cmdCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCancelarActionPerformed
@@ -228,6 +239,11 @@ public class Alquilar extends javax.swing.JDialog {
         cmbToga.setSelectedIndex(0);
         dcFechadeAlquiler.requestFocusInWindow();
 
+        JButton botonesH[] = {cmdCancelar, cmdIngresarCliente, cmdEliminar, cmdGuardar};
+        JButton botonesD[] = {};
+
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
     }//GEN-LAST:event_cmdCancelarActionPerformed
 
     private void cmdEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdEliminarActionPerformed
@@ -268,7 +284,7 @@ public class Alquilar extends javax.swing.JDialog {
                 if (aux == 0) {
                     System.out.println("va bien");
                     Alquiler a = new Alquiler(fechadeentrega, fechadealquiler, valor, depo, persona, togas);
-                    // a.guardar(salida);
+                    a.guardar(salida);
                 } else {
                     alquileresModificado = Helper.modificarAlquiler(rutaAl, valor, fechadeentrega, fechadealquiler, depo);
                     salida = new ObjectOutputStream(new FileOutputStream(rutaAl));
@@ -281,6 +297,12 @@ public class Alquilar extends javax.swing.JDialog {
                 Logger.getLogger(Alquilar.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        Helper.llenarTablaAlquiler(jTable1, rutaAl);
+        JButton botonesH[] = {cmdCancelar, cmdEliminar ,cmdIngresarCliente};
+        JButton botonesD[] = {cmdGuardar} ;
+
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
     }//GEN-LAST:event_cmdGuardarActionPerformed
 
     private void txtValorAlquiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtValorAlquiKeyTyped

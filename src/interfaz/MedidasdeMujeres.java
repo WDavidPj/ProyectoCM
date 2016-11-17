@@ -381,44 +381,90 @@ public class MedidasdeMujeres extends javax.swing.JDialog {
         celular = auxPersona.substring(0, indice);
         ArrayList<MedidasdeMujer> medidasModificado;
         personas = Helper.traerPersonaCelular(celular, rutaP);
+        if (txtAltodeRodilla.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad de alto de rodilla ", 1);
+            txtAltodeRodilla.requestFocusInWindow();
+        } else if (txtAnchodePierna.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad de ancho de pierna ", 1);
+            txtAnchodePierna.requestFocusInWindow();
+        } else if (txtAnchodeRodilla.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad de ancho de rodilla ", 1);
+            txtAnchodeRodilla.requestFocusInWindow();
+        } else if (txtBusto.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad del busto ", 1);
+            txtBusto.requestFocusInWindow();
+        } else if (txtCintura.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad de la cintura ", 1);
+            txtCintura.requestFocusInWindow();
+        } else if (txtEspalda.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad de espalda ", 1);
+            txtEspalda.requestFocusInWindow();
+        } else if (txtLargodeFalda.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad del largo de la falda ", 1);
+            txtLargodeFalda.requestFocusInWindow();
+        } else if (txtLargodeManga.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad del largo de manga ", 1);
+            txtLargodeManga.requestFocusInWindow();
+        } else if (txtLargodePantalon.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad de largo de pantalon ", 1);
+            txtLargodePantalon.requestFocusInWindow();
+        } else if (txtCadera.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad de la cadera ", 1);
+            txtCadera.requestFocusInWindow();
+        } else if (txtPuño.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad de los puños ", 1);
+            txtPuño.requestFocusInWindow();
+        } else if (txtTalleDelantero.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad del talle delantero ", 1);
+            txtTalleDelantero.requestFocusInWindow();
+        } else if (txtTalleTrasero.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad del talle trasero ", 1);
+            txtTalleTrasero.requestFocusInWindow();
+        } else if (txtSeparaciondePinza.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad de la separacion de pinza ", 1);
+            txtSeparaciondePinza.requestFocusInWindow();
+        } else if (txtAltodePinza.getText().trim().isEmpty()) {
+            Helper.mensaje(this, "Increse por favor la medidad del alto de pinza ", 1);
+            txtAltodePinza.requestFocusInWindow();
+        } else {
 
-        try {
-            if (aux == 0) {
-                MedidasdeMujer m = new MedidasdeMujer(talletra, talledela, busto, cintura, cadera, espalda, altorodi, anchopier, altodepinza, separaciondepin, anchoderodi, largodepanta, largodemanga, puno, largodefalda, personas);
-                m.guardar(salida);
+            try {
+                if (aux == 0) {
+                    MedidasdeMujer m = new MedidasdeMujer(talletra, talledela, busto, cintura, cadera, espalda, altorodi, anchopier, altodepinza, separaciondepin, anchoderodi, largodepanta, largodemanga, puno, largodefalda, personas);
+                    m.guardar(salida);
 
-            } else {
-                medidasModificado = Helper.modificarMedidasdeMujer(ruta, talletra, talledela, busto, altorodi, anchopier, espalda, altodepinza, separaciondepin, anchoderodi, cintura, cadera, largodepanta, largodemanga, puno, largodefalda);
-                salida = new ObjectOutputStream(new FileOutputStream(rutaP));
-                Helper.volcado(salida, medidasModificado);
-                aux = 0;
-                Helper.mensaje(this, "Medidas Actualizado Correctamente", 1);
+                } else {
+                    medidasModificado = Helper.modificarMedidasdeMujer(ruta, talletra, talledela, busto, altorodi, anchopier, espalda, altodepinza, separaciondepin, anchoderodi, cintura, cadera, largodepanta, largodemanga, puno, largodefalda);
+                    salida = new ObjectOutputStream(new FileOutputStream(rutaP));
+                    Helper.volcado(salida, medidasModificado);
+                    aux = 0;
+                    Helper.mensaje(this, "Medidas Actualizado Correctamente", 1);
+                }
+
+            } catch (IOException ex) {
+                Logger.getLogger(MedidasdeMujeres.class.getName()).log(Level.SEVERE, null, ex);
             }
 
-        } catch (IOException ex) {
-            Logger.getLogger(MedidasdeMujeres.class.getName()).log(Level.SEVERE, null, ex);
+            Helper.llenarTablaMujeres(tblTabla1, ruta);
+            txtAltodePinza.setText("");
+            txtAltodeRodilla.setText("");
+            txtAnchodePierna.setText("");
+            txtAnchodeRodilla.setText("");
+            txtBusto.setText("");
+            txtCadera.setText("");
+            txtCintura.setText("");
+            txtEspalda.setText("");
+            txtLargodeFalda.setText("");
+            txtLargodeManga.setText("");
+            txtLargodePantalon.setText("");
+            cmbPersonas.setSelectedIndex(0);
+            txtSeparaciondePinza.setText("");
+            txtTalleDelantero.setText("");
+            txtPuño.setText("");
+            txtTalleTrasero.setText("");
+
+            txtEspalda.requestFocusInWindow();
         }
-
-        Helper.llenarTablaMujeres(tblTabla1, ruta);
-        txtAltodePinza.setText("");
-        txtAltodeRodilla.setText("");
-        txtAnchodePierna.setText("");
-        txtAnchodeRodilla.setText("");
-        txtBusto.setText("");
-        txtCadera.setText("");
-        txtCintura.setText("");
-        txtEspalda.setText("");
-        txtLargodeFalda.setText("");
-        txtLargodeManga.setText("");
-        txtLargodePantalon.setText("");
-        cmbPersonas.setSelectedIndex(0);
-        txtSeparaciondePinza.setText("");
-        txtTalleDelantero.setText("");
-        txtPuño.setText("");
-        txtTalleTrasero.setText("");
-
-        txtEspalda.requestFocusInWindow();
-
     }//GEN-LAST:event_cmdNuevoActionPerformed
 
     private void tblTabla1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTabla1MouseClicked

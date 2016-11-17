@@ -14,6 +14,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 /**
@@ -33,6 +34,11 @@ public class Cliente extends javax.swing.JDialog {
     public Cliente(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        JButton botonesH[] = {cmdCancelar, cmdBuscar, cmdEliminar};
+        JButton botonesD[] = {cmdGuardar};
+
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
         rutaC = "src/datos/Cliente.txt";
         try {
             personas = Helper.traerDatos(rutaC);
@@ -233,33 +239,38 @@ public class Cliente extends javax.swing.JDialog {
         } else if (txtTelefono.getText().trim().isEmpty()) {
             Helper.mensaje(this, "Increse porfavor el telefono del cliente", 1);
             txtTelefono.requestFocusInWindow();
-        }else{
-        ArrayList<Persona> ClienteModificado;
-        try {
-            if (aux == 0) {
-                Persona p = new Persona(nom, ape, direcc, cel, tel, sexo);
-                p.guardar(salida);
-            } else {
-                ClienteModificado = Helper.modificarCliente(rutaC, nom, ape, direcc, sexo, cel, tel);
-                salida = new ObjectOutputStream(new FileOutputStream(rutaC));
-                Helper.volcado(salida, ClienteModificado);
-                aux = 0;
-                Helper.mensaje(this, "Persona Actualizada Correctamente!", 1);
+        } else {
+            ArrayList<Persona> ClienteModificado;
+            try {
+                if (aux == 0) {
+                    Persona p = new Persona(nom, ape, direcc, cel, tel, sexo);
+                    p.guardar(salida);
+                } else {
+                    ClienteModificado = Helper.modificarCliente(rutaC, nom, ape, direcc, sexo, cel, tel);
+                    salida = new ObjectOutputStream(new FileOutputStream(rutaC));
+                    Helper.volcado(salida, ClienteModificado);
+                    aux = 0;
+                    Helper.mensaje(this, "Persona Actualizada Correctamente!", 1);
+                }
+
+            } catch (IOException ex) {
+                Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
             }
 
-        } catch (IOException ex) {
-            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+            // Helper.llenarTabla(tblTabla1, ruta);
+            txtNombre.setText("");
+            txtApellido.setText("");
+            txtDireccion.setText("");
+            txtCelular.setText("");
+            txtTelefono.setText("");
+            txtNombre.requestFocusInWindow();
+            bgSexo.clearSelection();
         }
+        JButton botonesH[] = {cmdCancelar, cmdBuscar, cmdEliminar};
+        JButton botonesD[] = {cmdGuardar};
 
-        // Helper.llenarTabla(tblTabla1, ruta);
-        txtNombre.setText("");
-        txtApellido.setText("");
-        txtDireccion.setText("");
-        txtCelular.setText("");
-        txtTelefono.setText("");
-        txtNombre.requestFocusInWindow();
-        bgSexo.clearSelection();
-        }
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
     }//GEN-LAST:event_cmdGuardarActionPerformed
 
     private void cmdEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdEliminarActionPerformed
@@ -297,6 +308,11 @@ public class Cliente extends javax.swing.JDialog {
          txtNombre.requestFocusInWindow();
          }
          */
+        JButton botonesH[] = {cmdBuscar, cmdCancelar};
+        JButton botonesD[] = {cmdEliminar, cmdGuardar};
+
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
     }//GEN-LAST:event_cmdEliminarActionPerformed
 
     private void cmdCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCancelarActionPerformed
@@ -319,6 +335,11 @@ public class Cliente extends javax.swing.JDialog {
             txtNombre.requestFocusInWindow();
             aux = 0;
         }
+        JButton botonesH[] = {cmdGuardar, cmdBuscar, cmdCancelar};
+        JButton botonesD[] = {cmdEliminar};
+
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
     }//GEN-LAST:event_cmdBuscarActionPerformed
 
     private void txtCelularKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCelularKeyTyped
@@ -333,9 +354,9 @@ public class Cliente extends javax.swing.JDialog {
     }//GEN-LAST:event_txtCelularKeyTyped
 
     private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
-       char c = evt.getKeyChar();
+        char c = evt.getKeyChar();
 
-        if (Character.isDigit(c) ) {
+        if (Character.isDigit(c)) {
             getToolkit().beep();
 
             evt.consume();
@@ -346,7 +367,7 @@ public class Cliente extends javax.swing.JDialog {
     private void txtApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoKeyTyped
         char c = evt.getKeyChar();
 
-        if (Character.isDigit(c) ) {
+        if (Character.isDigit(c)) {
             getToolkit().beep();
 
             evt.consume();
@@ -355,7 +376,7 @@ public class Cliente extends javax.swing.JDialog {
     }//GEN-LAST:event_txtApellidoKeyTyped
 
     private void txtTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyTyped
-       char c = evt.getKeyChar();
+        char c = evt.getKeyChar();
 
         if (!Character.isDigit(c)) {
             getToolkit().beep();

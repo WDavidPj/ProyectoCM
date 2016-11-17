@@ -14,6 +14,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 /**
@@ -33,6 +34,11 @@ public class InventariodeUniformes extends javax.swing.JDialog {
     public InventariodeUniformes(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        JButton botonesH[] = {cmdCancelar, cmdBuscar, cmdEliminar};
+        JButton botonesD[] = {cmdGuardar};
+
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
         ruta = "src/datos/InventariodeUniformes.txt";
         try {
             uniformes = Helper.traerDatos(ruta);
@@ -81,7 +87,7 @@ public class InventariodeUniformes extends javax.swing.JDialog {
         jPanel3 = new javax.swing.JPanel();
         cmdGuardar = new javax.swing.JButton();
         cmdEliminar = new javax.swing.JButton();
-        cmdLimpiar = new javax.swing.JButton();
+        cmdCancelar = new javax.swing.JButton();
         cmdBuscar = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -196,14 +202,14 @@ public class InventariodeUniformes extends javax.swing.JDialog {
         });
         jPanel3.add(cmdEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 120, 40));
 
-        cmdLimpiar.setBackground(new java.awt.Color(255, 153, 102));
-        cmdLimpiar.setText("Limpiar");
-        cmdLimpiar.addActionListener(new java.awt.event.ActionListener() {
+        cmdCancelar.setBackground(new java.awt.Color(255, 153, 102));
+        cmdCancelar.setText("Limpiar");
+        cmdCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdLimpiarActionPerformed(evt);
+                cmdCancelarActionPerformed(evt);
             }
         });
-        jPanel3.add(cmdLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 110, 40));
+        jPanel3.add(cmdCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 110, 40));
 
         cmdBuscar.setBackground(new java.awt.Color(255, 153, 102));
         cmdBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/magnifier.png"))); // NOI18N
@@ -313,6 +319,11 @@ public class InventariodeUniformes extends javax.swing.JDialog {
             cmbTipo.setSelectedItem(0);
             bgSexo.clearSelection();
         }
+        JButton botonesH[] = {cmdCancelar, cmdBuscar, cmdEliminar};
+        JButton botonesD[] = {cmdGuardar};
+
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
     }//GEN-LAST:event_cmdGuardarActionPerformed
 
     private void tblTabla1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTabla1MouseClicked
@@ -331,7 +342,11 @@ public class InventariodeUniformes extends javax.swing.JDialog {
         cmbPuños.setSelectedItem(u.getPuños());
         cmbTipo.setSelectedItem(u.getTipo());
 
+        JButton botonesH[] = {cmdCancelar, cmdEliminar};
+        JButton botonesD[] = {cmdGuardar, cmdBuscar};
 
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
     }//GEN-LAST:event_tblTabla1MouseClicked
 
     private void cmdEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdEliminarActionPerformed
@@ -356,9 +371,14 @@ public class InventariodeUniformes extends javax.swing.JDialog {
         } else {
 
         }
+        JButton botonesH[] = {cmdBuscar, cmdCancelar};
+        JButton botonesD[] = {cmdEliminar, cmdGuardar};
+
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
     }//GEN-LAST:event_cmdEliminarActionPerformed
 
-    private void cmdLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLimpiarActionPerformed
+    private void cmdCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCancelarActionPerformed
         txtDireccion.setText("");
         txtNombredeColegio.setText("");
         txtTelefono.setText("");
@@ -368,7 +388,12 @@ public class InventariodeUniformes extends javax.swing.JDialog {
         cmbEstanpado.setSelectedItem(0);
         cmbPuños.setSelectedItem(0);
         cmbTipo.setSelectedItem(0);
-    }//GEN-LAST:event_cmdLimpiarActionPerformed
+        JButton botonesH[] = {cmdGuardar, cmdBuscar, cmdCancelar, cmdEliminar};
+        JButton botonesD[] = {};
+
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
+    }//GEN-LAST:event_cmdCancelarActionPerformed
 
     private void cmdBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBuscarActionPerformed
         String nomcole;
@@ -391,6 +416,11 @@ public class InventariodeUniformes extends javax.swing.JDialog {
             txtNombredeColegio.requestFocusInWindow();
             aux = 0;
         }
+        JButton botonesH[] = {cmdGuardar, cmdBuscar, cmdCancelar};
+        JButton botonesD[] = {cmdEliminar};
+
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
     }//GEN-LAST:event_cmdBuscarActionPerformed
 
     private void txtNombredeColegioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombredeColegioKeyTyped
@@ -467,9 +497,9 @@ public class InventariodeUniformes extends javax.swing.JDialog {
     private javax.swing.JComboBox cmbPuños;
     private javax.swing.JComboBox cmbTipo;
     private javax.swing.JButton cmdBuscar;
+    private javax.swing.JButton cmdCancelar;
     private javax.swing.JButton cmdEliminar;
     private javax.swing.JButton cmdGuardar;
-    private javax.swing.JButton cmdLimpiar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;

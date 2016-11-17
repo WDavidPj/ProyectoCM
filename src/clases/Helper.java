@@ -139,7 +139,25 @@ public class Helper {
             tabla.setValueAt(personas.get(i).getSexo(), i, 6);
         }
     }
+ public static void llenarTablaAlquiler(JTable tabla, String ruta) {
+        DefaultTableModel tm;
+        int nf;
+        ArrayList<Alquiler> alquiler = traerDatos(ruta);
+        tm = (DefaultTableModel) tabla.getModel();
+        limpiadoTabla(tabla);
+        nf = alquiler.size();
+        tm.setRowCount(nf);
 
+        for (int i = 0; i < nf; i++) {
+            tabla.setValueAt(i + 1, i, 0);
+            tabla.setValueAt(alquiler.get(i).getPersonas().getNombre(), i, 1);
+            tabla.setValueAt(alquiler.get(i).getTogas().getColor(), i, 2);
+            tabla.setValueAt(alquiler.get(i).getValor(), i, 3);
+            tabla.setValueAt(alquiler.get(i).getDeposito(), i, 4);
+            tabla.setValueAt(alquiler.get(i).getFechadealquiler(), i, 6);
+            tabla.setValueAt(alquiler.get(i).getFechadeentrega(), i, 5);
+        }
+    }
     public static void llenarTablaUniformes(JTable tabla, String ruta) {
         DefaultTableModel tm;
         int nf;

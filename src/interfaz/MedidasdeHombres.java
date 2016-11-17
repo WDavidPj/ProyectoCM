@@ -15,6 +15,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 /**
@@ -34,6 +35,11 @@ public class MedidasdeHombres extends javax.swing.JDialog {
     public MedidasdeHombres(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        JButton botonesH[] = {cmdLimpiar, cmdModificar, cmdEliminar};
+        JButton botonesD[] = {cmdNuevo};
+
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
         ruta = "src/datos/MedidasdeHombre.txt";
         rutaP = "src/datos/Personas.txt";
         Helper.llenarComboPersonasMasculino(cmbPersonas, rutaP);
@@ -94,7 +100,7 @@ public class MedidasdeHombres extends javax.swing.JDialog {
         cmdNuevo = new javax.swing.JButton();
         cmdEliminar = new javax.swing.JButton();
         cmdLimpiar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        cmdModificar = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblTabla1 = new javax.swing.JTable();
@@ -289,14 +295,14 @@ public class MedidasdeHombres extends javax.swing.JDialog {
         });
         jPanel3.add(cmdLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 110, 40));
 
-        jButton1.setBackground(new java.awt.Color(153, 153, 153));
-        jButton1.setText("Modificar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        cmdModificar.setBackground(new java.awt.Color(153, 153, 153));
+        cmdModificar.setText("Modificar");
+        cmdModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                cmdModificarActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 110, 40));
+        jPanel3.add(cmdModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 110, 40));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 80, 280, 160));
 
@@ -445,7 +451,12 @@ public class MedidasdeHombres extends javax.swing.JDialog {
             txtTalleTrasero.setText("");
             txtContornoCuello.setText("");
 
-        }//llenarTabla
+        }//llenarTabla}
+        JButton botonesH[] = {cmdLimpiar, cmdModificar, cmdEliminar};
+        JButton botonesD[] = {cmdNuevo};
+
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
     }//GEN-LAST:event_cmdNuevoActionPerformed
 
     private void tblTabla1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTabla1MouseClicked
@@ -471,7 +482,11 @@ public class MedidasdeHombres extends javax.swing.JDialog {
         txtTalleDelantero.setText(m.getTalleDelantero());
         txtTalleTrasero.setText(m.getTalleTrasero());
 
+        JButton botonesH[] = {cmdLimpiar, cmdEliminar};
+        JButton botonesD[] = {cmdNuevo, cmdModificar};
 
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
     }//GEN-LAST:event_tblTabla1MouseClicked
 
     private void cmdEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdEliminarActionPerformed
@@ -502,6 +517,11 @@ public class MedidasdeHombres extends javax.swing.JDialog {
         } else {
 
         }
+        JButton botonesH[] = {cmdModificar, cmdLimpiar};
+        JButton botonesD[] = {cmdEliminar, cmdNuevo};
+
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
     }//GEN-LAST:event_cmdEliminarActionPerformed
 
     private void cmdLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLimpiarActionPerformed
@@ -519,10 +539,14 @@ public class MedidasdeHombres extends javax.swing.JDialog {
         txtTalleDelantero.setText("");
         txtPuños.setText("");
         txtTalleTrasero.setText("");
+        JButton botonesH[] = {cmdNuevo, cmdModificar, cmdLimpiar, cmdEliminar};
+        JButton botonesD[] = {};
 
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
     }//GEN-LAST:event_cmdLimpiarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void cmdModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdModificarActionPerformed
         //Modificador
         String espalda, auxPersonas;
         Persona personas;
@@ -539,7 +563,12 @@ public class MedidasdeHombres extends javax.swing.JDialog {
             txtEspalda.requestFocusInWindow();
             aux = 0;
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+        JButton botonesH[] = {cmdNuevo, cmdModificar, cmdLimpiar};
+        JButton botonesD[] = {cmdEliminar};
+
+        Helper.habilitarBotonoes(botonesH);
+        Helper.deshabilitarBotonoes(botonesD);
+    }//GEN-LAST:event_cmdModificarActionPerformed
 
     private void txtEspaldaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEspaldaKeyTyped
         char c = evt.getKeyChar();
@@ -745,8 +774,8 @@ public class MedidasdeHombres extends javax.swing.JDialog {
     private javax.swing.JComboBox cmbPersonas;
     private javax.swing.JButton cmdEliminar;
     private javax.swing.JButton cmdLimpiar;
+    private javax.swing.JButton cmdModificar;
     private javax.swing.JButton cmdNuevo;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;

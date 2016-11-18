@@ -29,14 +29,14 @@ public class MedidasdeMujeres extends javax.swing.JDialog {
      */
     String ruta, rutaP;
     ObjectOutputStream salida;
-    ArrayList<MedidasdeMujeres> MedidasdeMujer;
+    ArrayList<MedidasdeMujeres> Medidasdemujer;
     int aux = 0;
 
     public MedidasdeMujeres(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        JButton botonesH[] = {cmdLimpiar, cmdModificar, cmdEliminar};
-        JButton botonesD[] = {cmdNuevo};
+        JButton botonesH[] = {cmdNuevo, cmdLimpiar, cmdEliminar};
+        JButton botonesD[] = {cmdModificar};
 
         Helper.habilitarBotonoes(botonesH);
         Helper.deshabilitarBotonoes(botonesD);
@@ -44,12 +44,12 @@ public class MedidasdeMujeres extends javax.swing.JDialog {
         rutaP = "src/datos/Personas.txt";
         Helper.llenarComboPersonasFemenino(cmbPersonas, rutaP);
         try {
-            MedidasdeMujer = Helper.traerDatos(ruta);
+            Medidasdemujer = Helper.traerDatos(ruta);
             salida = new ObjectOutputStream(new FileOutputStream(ruta));
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
-        Helper.volcado(salida, MedidasdeMujer);
+        Helper.volcado(salida, Medidasdemujer);
         Helper.llenarTablaMujeres(tblTabla1, ruta);
 
     }
@@ -479,15 +479,32 @@ public class MedidasdeMujeres extends javax.swing.JDialog {
     }//GEN-LAST:event_cmdNuevoActionPerformed
 
     private void tblTabla1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTabla1MouseClicked
-
         int i;
-        MedidasdeMujeres m;
-        ArrayList<MedidasdeMujeres> medidasdemujer = Helper.traerDatos(ruta);
+        MedidasdeMujer m;
+        ArrayList<MedidasdeMujer> Medidasdemujer = Helper.traerDatos(ruta);
         i = tblTabla1.getSelectedRow();
-        m = medidasdemujer.get(i);
+        m = Medidasdemujer.get(i);
 
-        JButton botonesH[] = {cmdLimpiar, cmdEliminar};
-        JButton botonesD[] = {cmdNuevo, cmdModificar};
+        txtAltodeRodilla.setText(m.getAltodeRodilla());
+        txtAnchodePierna.setText(m.getAnchodepierna());
+        txtAnchodeRodilla.setText(m.getAltodeRodilla());
+        txtCadera.setText(m.getCadera());
+        txtCintura.setText(m.getCintura());
+        //txtContornoCuello.setText(m.getContoronodeCuello());
+        txtEspalda.setText(m.getEspalda());
+        txtLargodeFalda.setText(m.getLargodeFalda());
+        txtLargodeManga.setText(m.getLargodeManga());
+        txtLargodePantalon.setText(m.getLargodePantalon());
+        txtBusto.setText(m.getBusto());
+        txtPuño.setText(m.getPuño());
+        txtTalleDelantero.setText(m.getTalleDelantero());
+        txtTalleTrasero.setText(m.getTalleTrasero());
+        txtAltodePinza.setText(m.getAltodePinza());
+        txtSeparaciondePinza.setText(m.getSeparaciondePinza());
+                
+        
+        JButton botonesH[] = {cmdLimpiar, cmdEliminar, cmdModificar};
+        JButton botonesD[] = {cmdNuevo};
 
         Helper.habilitarBotonoes(botonesH);
         Helper.deshabilitarBotonoes(botonesD);
@@ -501,7 +518,7 @@ public class MedidasdeMujeres extends javax.swing.JDialog {
         if (op == JOptionPane.YES_OPTION) {
 
             i = tblTabla1.getSelectedRow();
-            MedidasdeMujer.remove(i);
+            Medidasdemujer.remove(i);
             try {
                 salida = new ObjectOutputStream(new FileOutputStream(ruta));
             } catch (FileNotFoundException ex) {
@@ -509,7 +526,7 @@ public class MedidasdeMujeres extends javax.swing.JDialog {
             } catch (IOException ex) {
                 Logger.getLogger(MedidasdeMujeres.class.getName()).log(Level.SEVERE, null, ex);
             }
-            Helper.volcado(salida, MedidasdeMujer);
+            Helper.volcado(salida, Medidasdemujer);
             Helper.llenarTablaMujeres(tblTabla1, ruta);
 
             cmbPersonas.setSelectedIndex(0);
@@ -521,8 +538,8 @@ public class MedidasdeMujeres extends javax.swing.JDialog {
         } else {
 
         }
-        JButton botonesH[] = {cmdModificar, cmdLimpiar};
-        JButton botonesD[] = {cmdEliminar, cmdNuevo};
+        JButton botonesH[] = {cmdModificar, cmdLimpiar, cmdNuevo};
+        JButton botonesD[] = {cmdEliminar};
 
         Helper.habilitarBotonoes(botonesH);
         Helper.deshabilitarBotonoes(botonesD);

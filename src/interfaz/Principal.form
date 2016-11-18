@@ -38,6 +38,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="mnAgenda">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Ctrl+A"/>
+                </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/imagenes/notebook-of-contacts.png"/>
                 </Property>
@@ -62,6 +65,9 @@
                   <SubComponents>
                     <MenuItem class="javax.swing.JMenuItem" name="mnCantdePersonas">
                       <Properties>
+                        <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                          <KeyStroke key="Ctrl+Alt+A"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Cantidad de Personas en la Agenda"/>
                       </Properties>
                       <Events>
@@ -70,6 +76,9 @@
                     </MenuItem>
                     <MenuItem class="javax.swing.JMenuItem" name="mnCantdeTogas">
                       <Properties>
+                        <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                          <KeyStroke key="Ctrl+Alt+T"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Cantidad de Togas"/>
                       </Properties>
                       <Events>
@@ -78,6 +87,9 @@
                     </MenuItem>
                     <MenuItem class="javax.swing.JMenuItem" name="mnCantdeUniformes">
                       <Properties>
+                        <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                          <KeyStroke key="Ctrl+Alt+U"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Cantidad de Uniformes "/>
                       </Properties>
                       <Events>
@@ -93,6 +105,9 @@
                   <SubComponents>
                     <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
                       <Properties>
+                        <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                          <KeyStroke key="Shift+L"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="LIstadoCompleto"/>
                       </Properties>
                       <Events>
@@ -107,6 +122,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnSalir">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="ESCAPE"/>
+                </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/imagenes/power.png"/>
                 </Property>
@@ -128,6 +146,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="mnInventarioUniformes">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Ctrl+U"/>
+                </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/imagenes/t-shirt-of-soccer-player-front.png"/>
                 </Property>
@@ -141,6 +162,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnInventarioTogas">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Ctrl+T"/>
+                </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/imagenes/graduation-hat.png"/>
                 </Property>
@@ -165,6 +189,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="mnMedidasdeMujer">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Alt+M"/>
+                </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/imagenes/businesswoman.png"/>
                 </Property>
@@ -178,6 +205,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnMedidasHombre">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Alt+H"/>
+                </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/imagenes/businessman.png"/>
                 </Property>
@@ -185,27 +215,6 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnMedidasHombreActionPerformed"/>
-              </Events>
-            </MenuItem>
-          </SubComponents>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="mnPrecioss">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/imagenes/contract.png"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Precios"/>
-          </Properties>
-          <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="mnPrecios">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/imagenes/give-money.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Precios"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnPreciosActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -220,6 +229,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JCheckBoxMenuItem" name="jCheckBoxMenuItem1">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Alt+A"/>
+                </Property>
                 <Property name="selected" type="boolean" value="true"/>
                 <Property name="text" type="java.lang.String" value="Alquier"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">

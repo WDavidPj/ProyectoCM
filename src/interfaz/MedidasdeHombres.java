@@ -35,8 +35,8 @@ public class MedidasdeHombres extends javax.swing.JDialog {
     public MedidasdeHombres(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        JButton botonesH[] = {cmdLimpiar, cmdModificar, cmdEliminar};
-        JButton botonesD[] = {cmdNuevo};
+        JButton botonesH[] = {cmdLimpiar,  cmdEliminar,cmdNuevo};
+        JButton botonesD[] = {cmdModificar};
 
         Helper.habilitarBotonoes(botonesH);
         Helper.deshabilitarBotonoes(botonesD);
@@ -527,7 +527,7 @@ public class MedidasdeHombres extends javax.swing.JDialog {
     private void cmdLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLimpiarActionPerformed
         txtAltodeRodilla.setText("");
         txtAnchodePierna.setText("");
-        txtAnchodePierna.setText("");
+        txtAnchodeRodilla.setText("");
         txtPecho.setText("");
         txtBase.setText("");
         txtCintura.setText("");
@@ -539,6 +539,8 @@ public class MedidasdeHombres extends javax.swing.JDialog {
         txtTalleDelantero.setText("");
         txtPuños.setText("");
         txtTalleTrasero.setText("");
+        txtContornoCuello.setText("");
+        
         JButton botonesH[] = {cmdNuevo, cmdModificar, cmdLimpiar, cmdEliminar};
         JButton botonesD[] = {};
 

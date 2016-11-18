@@ -22,7 +22,7 @@ import javax.swing.JButton;
  *
  * @author Wdavid
  */
-public class Alquilar extends javax.swing.JDialog {
+public class Alquilar2 extends javax.swing.JDialog {
 
     /**
      * Creates new form Agenda
@@ -32,11 +32,11 @@ public class Alquilar extends javax.swing.JDialog {
     ObjectOutputStream salida;
     ArrayList<Alquiler> alquiler;
 
-    public Alquilar(java.awt.Frame parent, boolean modal) {
+    public Alquilar2(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        JButton botonesH[] = {cmdCancelar, cmdIngresarCliente, cmdEliminar};
-        JButton botonesD[] = {cmdGuardar};
+        JButton botonesH[] = {cmdCancelar, cmdIngresarCliente,cmdGuardar};
+        JButton botonesD[] = {cmdEliminar};
 
         Helper.habilitarBotonoes(botonesH);
         Helper.deshabilitarBotonoes(botonesD);
@@ -96,7 +96,7 @@ public class Alquilar extends javax.swing.JDialog {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(204, 255, 204));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)), "Datos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.BELOW_TOP, null, new java.awt.Color(0, 0, 0)));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)), "Datos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.BELOW_TOP));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel9.setText("Toga");
@@ -140,7 +140,7 @@ public class Alquilar extends javax.swing.JDialog {
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 410, 230));
 
         jPanel3.setBackground(new java.awt.Color(204, 255, 204));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)), "Opciones", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.BELOW_TOP, null, new java.awt.Color(0, 51, 51)));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)), "Opciones", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.BELOW_TOP, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 51, 51))); // NOI18N
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cmdIngresarCliente.setBackground(new java.awt.Color(153, 255, 153));
@@ -185,7 +185,7 @@ public class Alquilar extends javax.swing.JDialog {
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 60, 300, 130));
 
         jPanel4.setBackground(new java.awt.Color(153, 255, 153));
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)), "Alquileres", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.BELOW_TOP, null, new java.awt.Color(0, 0, 0)));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)), "Alquileres", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.BELOW_TOP));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -294,7 +294,7 @@ public class Alquilar extends javax.swing.JDialog {
                 }
 
             } catch (IOException ex) {
-                Logger.getLogger(Alquilar.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Alquilar2.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         Helper.llenarTablaAlquiler(jTable1, rutaAl);
@@ -344,14 +344,18 @@ public class Alquilar extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Alquilar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Alquilar2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Alquilar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Alquilar2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Alquilar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Alquilar2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Alquilar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Alquilar2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -360,7 +364,7 @@ public class Alquilar extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Alquilar dialog = new Alquilar(new javax.swing.JFrame(), true);
+                Alquilar2 dialog = new Alquilar2(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

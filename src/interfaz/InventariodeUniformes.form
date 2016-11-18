@@ -59,7 +59,6 @@
                       <Color PropertyName="color" blue="66" green="66" red="0" type="rgb"/>
                     </LineBorder>
                   </Border>
-                  <Color PropertyName="color" blue="0" green="0" red="0" type="rgb"/>
                 </TitledBorder>
               </Border>
             </Property>
@@ -435,9 +434,7 @@
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder justification="2" position="1" title="Inventario de Uniformes">
-                  <Color PropertyName="color" blue="0" green="0" red="0" type="rgb"/>
-                </TitledBorder>
+                <TitledBorder justification="2" position="1" title="Inventario de Uniformes"/>
               </Border>
             </Property>
           </Properties>

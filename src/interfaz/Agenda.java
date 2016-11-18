@@ -34,6 +34,13 @@ public class Agenda extends javax.swing.JDialog {
     public Agenda(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        txtApellido.setVisible(false);
+        txtDireccion.setVisible(false);
+        txtNombre.setVisible(false);
+        txtTelefono.setVisible(false);
+        rbFemenino.setVisible(false);
+        rbMasculino.setVisible(false);
+        txtCelular.setVisible(true);
         JButton botonesH[] = {cmdCancelar, cmdBuscar, cmdEliminar};
         JButton botonesD[] = {cmdGuardar};
 
@@ -402,6 +409,13 @@ public class Agenda extends javax.swing.JDialog {
             txtNombre.requestFocusInWindow();
             aux = 0;
         }
+        txtApellido.setVisible(true);
+        txtDireccion.setVisible(true);
+        txtNombre.setVisible(true);
+        txtTelefono.setVisible(true);
+        txtCelular.setVisible(true);
+        rbFemenino.setVisible(true);
+        rbMasculino.setVisible(true);
         JButton botonesH[] = {cmdGuardar, cmdBuscar, cmdCancelar};
         JButton botonesD[] = {cmdEliminar};
 

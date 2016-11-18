@@ -139,7 +139,8 @@ public class Helper {
             tabla.setValueAt(personas.get(i).getSexo(), i, 6);
         }
     }
- public static void llenarTablaAlquiler(JTable tabla, String ruta) {
+
+    public static void llenarTablaAlquiler(JTable tabla, String ruta) {
         DefaultTableModel tm;
         int nf;
         ArrayList<Alquiler> alquiler = traerDatos(ruta);
@@ -158,6 +159,7 @@ public class Helper {
             tabla.setValueAt(alquiler.get(i).getFechadeentrega(), i, 5);
         }
     }
+
     public static void llenarTablaUniformes(JTable tabla, String ruta) {
         DefaultTableModel tm;
         int nf;
@@ -261,7 +263,7 @@ public class Helper {
             tabla.setValueAt(Medidasdehombre.get(i).getAnchodepierna(), i, 13);
             tabla.setValueAt(Medidasdehombre.get(i).getContoronodeCuello(), i, 14);
             tabla.setValueAt(Medidasdehombre.get(i).getLargodeCamisa(), i, 15);
-//            tabla.setValueAt(Medidasdehombre.get(i).getPersonas().getNombre(), i, 1);
+            tabla.setValueAt(Medidasdehombre.get(i).getPersonas().getNombre(), i, 1);
 
         }
     }
@@ -281,6 +283,7 @@ public class Helper {
         }
         return null;
     }
+
     public static ArrayList<Persona> modificarCliente(String ruta, String nombre, String telefono, String apellido, String sexo, String direccion, String celular) {
         ArrayList<Persona> personas = traerDatos(ruta);
         for (int i = 0; i < personas.size(); i++) {
@@ -534,20 +537,22 @@ public class Helper {
         }
 
     }
-    public static void llenarcomboFiltralTogas (JComboBox combo , String ruta){
+
+    public static void llenarcomboFiltralTogas(JComboBox combo, String ruta) {
         ArrayList<Toga> togas = traerDatos(ruta);
         DefaultComboBoxModel dcbm = (DefaultComboBoxModel) combo.getModel();
         dcbm.removeAllElements();
         dcbm.removeAllElements();
         Toga t;
         for (int i = 0; i < togas.size(); i++) {
-            if(!"nn".equals(togas.get(i).getCantBirete()) && !"nn".equals(togas.get(i).getCantBufanda()) && !"nn".equals(togas.get(i).getCantCamisa())){
-                t=togas.get(i);
-                dcbm.addElement(t.getColor() + " - "+" Hay:"+ t.getCantBirete()+" Biretes" + " - " +" Hay: "+ t.getCantBufanda()+" Bufandas" + " - " +" Hay:" +t.getCantCamisa()+" Camisas");
-                
+            if (!"nn".equals(togas.get(i).getCantBirete()) && !"nn".equals(togas.get(i).getCantBufanda()) && !"nn".equals(togas.get(i).getCantCamisa())) {
+                t = togas.get(i);
+                dcbm.addElement(t.getColor() + " - " + " Hay:" + t.getCantBirete() + " Biretes" + " - " + " Hay: " + t.getCantBufanda() + " Bufandas" + " - " + " Hay:" + t.getCantCamisa() + " Camisas");
+
             }
         }
     }
+
     public static void llenarComboClientes(JComboBox combo, String ruta) {
         ArrayList<Persona> personas = traerDatos(ruta);
         DefaultComboBoxModel dcbm = (DefaultComboBoxModel) combo.getModel();
@@ -558,7 +563,8 @@ public class Helper {
             dcbm.addElement(p.getCelular() + " - " + p.getNombre() + "  " + p.getApellidos() + " - " + p.getDireccion() + " - " + p.getSexo() + " - " + p.getTelefono());
         }
     }
-    public static ArrayList<Alquiler> modificarAlquiler(String ruta, int valor, String fechadentrega , String fechadealquiler, int deposito) {
+
+    public static ArrayList<Alquiler> modificarAlquiler(String ruta, int valor, String fechadentrega, String fechadealquiler, int deposito) {
         ArrayList<Alquiler> alquiler = traerDatos(ruta);
         for (int i = 0; i < alquiler.size(); i++) {
             if (alquiler.get(i).getFechadeentrega().equals(fechadentrega)) {
@@ -573,6 +579,7 @@ public class Helper {
         }
         return null;
     }
+
     public static boolean buscarAlquiler(String x, String ruta) {
         ArrayList<Alquiler> alquiler = traerDatos(ruta);
         for (int i = 0; i < alquiler.size(); i++) {
@@ -593,10 +600,11 @@ public class Helper {
         }
         return null;
     }
-    public static void cantDePersonas (String ruta){
+
+    public static void cantDePersonas(String ruta) {
         ArrayList<Persona> personas = traerDatos(ruta);
         for (int i = 0; i < personas.size(); i++) {
-            
+
         }
     }
 

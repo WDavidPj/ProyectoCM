@@ -35,8 +35,15 @@ public class InventariodeTogas extends javax.swing.JDialog {
     public InventariodeTogas(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        JButton botonesH[] = {cmdGuardar, cmdBuscar, cmdCancelar};
-        JButton botonesD[] = {cmdEliminar};
+        txtCantBirete.setVisible(false);
+        txtCantBufandas.setVisible(false);
+        txtCantCamisas.setVisible(false);
+        cmbBirete.setVisible(false);
+        cmbBufanda.setVisible(false);
+        cmbCamisa.setVisible(false);
+        txtColor.setVisible(true);
+        JButton botonesH[] = { cmdBuscar, cmdCancelar};
+        JButton botonesD[] = {cmdEliminar ,cmdGuardar};
 
         Helper.habilitarBotonoes(botonesH);
         Helper.deshabilitarBotonoes(botonesD);
@@ -396,6 +403,13 @@ public class InventariodeTogas extends javax.swing.JDialog {
             txtColor.requestFocusInWindow();
             aux = 0;
         }
+        txtCantBirete.setVisible(true);
+        txtCantBufandas.setVisible(true);
+        txtCantCamisas.setVisible(true);
+        cmbBirete.setVisible(true);
+        cmbBufanda.setVisible(true);
+        cmbCamisa.setVisible(true);
+        txtColor.setVisible(true);
         JButton botonesH[] = {cmdGuardar, cmdBuscar, cmdCancelar};
         JButton botonesD[] = {cmdEliminar};
 

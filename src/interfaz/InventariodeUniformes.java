@@ -34,6 +34,15 @@ public class InventariodeUniformes extends javax.swing.JDialog {
     public InventariodeUniformes(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        txtDireccion.setVisible(false);
+        txtTelefono.setVisible(false);
+        cmbBordado.setVisible(false);
+        cmbCuello.setVisible(false);
+        cmbEscudo.setVisible(false);
+        cmbEstanpado.setVisible(false);
+        cmbPuños.setVisible(false);
+        cmbTipo.setVisible(false);
+        txtNombredeColegio.setVisible(true);
         JButton botonesH[] = {cmdCancelar, cmdBuscar, cmdEliminar};
         JButton botonesD[] = {cmdGuardar};
 
@@ -416,6 +425,15 @@ public class InventariodeUniformes extends javax.swing.JDialog {
             txtNombredeColegio.requestFocusInWindow();
             aux = 0;
         }
+        txtDireccion.setVisible(true);
+        txtTelefono.setVisible(true);
+        cmbBordado.setVisible(true);
+        cmbCuello.setVisible(true);
+        cmbEscudo.setVisible(true);
+        cmbEstanpado.setVisible(true);
+        cmbPuños.setVisible(true);
+        cmbTipo.setVisible(true);
+        txtNombredeColegio.setVisible(true);
         JButton botonesH[] = {cmdGuardar, cmdBuscar, cmdCancelar};
         JButton botonesD[] = {cmdEliminar};
 

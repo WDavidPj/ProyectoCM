@@ -63,8 +63,6 @@ public class Principal extends javax.swing.JFrame {
         mnMedidasdeMujer = new javax.swing.JMenuItem();
         jSeparator5 = new javax.swing.JPopupMenu.Separator();
         mnMedidasHombre = new javax.swing.JMenuItem();
-        mnPrecioss = new javax.swing.JMenu();
-        mnPrecios = new javax.swing.JMenuItem();
         mnAlquiler = new javax.swing.JMenu();
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
 
@@ -99,6 +97,7 @@ public class Principal extends javax.swing.JFrame {
         mnOpciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mechanical-gears-.png"))); // NOI18N
         mnOpciones.setText("Opciones");
 
+        mnAgenda.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
         mnAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/notebook-of-contacts.png"))); // NOI18N
         mnAgenda.setText("Agenda");
         mnAgenda.addActionListener(new java.awt.event.ActionListener() {
@@ -113,6 +112,7 @@ public class Principal extends javax.swing.JFrame {
 
         jMenu4.setText("Cantidades");
 
+        mnCantdePersonas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         mnCantdePersonas.setText("Cantidad de Personas en la Agenda");
         mnCantdePersonas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,6 +121,7 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu4.add(mnCantdePersonas);
 
+        mnCantdeTogas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         mnCantdeTogas.setText("Cantidad de Togas");
         mnCantdeTogas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,6 +130,7 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu4.add(mnCantdeTogas);
 
+        mnCantdeUniformes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         mnCantdeUniformes.setText("Cantidad de Uniformes ");
         mnCantdeUniformes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,6 +143,7 @@ public class Principal extends javax.swing.JFrame {
 
         jMenu5.setText("Listado");
 
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.SHIFT_MASK));
         jMenuItem4.setText("LIstadoCompleto");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,6 +157,7 @@ public class Principal extends javax.swing.JFrame {
         mnOpciones.add(jMenu2);
         mnOpciones.add(jSeparator1);
 
+        mnSalir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE, 0));
         mnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/power.png"))); // NOI18N
         mnSalir.setText("Salir");
         mnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -168,6 +172,7 @@ public class Principal extends javax.swing.JFrame {
         mnInventarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/old-fashion-briefcase.png"))); // NOI18N
         mnInventarios.setText("Inventarios");
 
+        mnInventarioUniformes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
         mnInventarioUniformes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/t-shirt-of-soccer-player-front.png"))); // NOI18N
         mnInventarioUniformes.setText("Inventario de Uniformes");
         mnInventarioUniformes.addActionListener(new java.awt.event.ActionListener() {
@@ -178,6 +183,7 @@ public class Principal extends javax.swing.JFrame {
         mnInventarios.add(mnInventarioUniformes);
         mnInventarios.add(jSeparator2);
 
+        mnInventarioTogas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_MASK));
         mnInventarioTogas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/graduation-hat.png"))); // NOI18N
         mnInventarioTogas.setText("Inventario de Togas");
         mnInventarioTogas.addActionListener(new java.awt.event.ActionListener() {
@@ -197,6 +203,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        mnMedidasdeMujer.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.ALT_MASK));
         mnMedidasdeMujer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/businesswoman.png"))); // NOI18N
         mnMedidasdeMujer.setText("Medidas de Mujer");
         mnMedidasdeMujer.addActionListener(new java.awt.event.ActionListener() {
@@ -207,6 +214,7 @@ public class Principal extends javax.swing.JFrame {
         mnMedidas.add(mnMedidasdeMujer);
         mnMedidas.add(jSeparator5);
 
+        mnMedidasHombre.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.ALT_MASK));
         mnMedidasHombre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/businessman.png"))); // NOI18N
         mnMedidasHombre.setText("Medidas de Hombre");
         mnMedidasHombre.addActionListener(new java.awt.event.ActionListener() {
@@ -218,23 +226,10 @@ public class Principal extends javax.swing.JFrame {
 
         jMenuBar1.add(mnMedidas);
 
-        mnPrecioss.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/contract.png"))); // NOI18N
-        mnPrecioss.setText("Precios");
-
-        mnPrecios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/give-money.png"))); // NOI18N
-        mnPrecios.setText("Precios");
-        mnPrecios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnPreciosActionPerformed(evt);
-            }
-        });
-        mnPrecioss.add(mnPrecios);
-
-        jMenuBar1.add(mnPrecioss);
-
         mnAlquiler.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/list.png"))); // NOI18N
         mnAlquiler.setText("Alquilar");
 
+        jCheckBoxMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_MASK));
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("Alquier");
         jCheckBoxMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/partnership.png"))); // NOI18N
@@ -297,17 +292,12 @@ public class Principal extends javax.swing.JFrame {
         t.setVisible(true);
     }//GEN-LAST:event_mnInventarioTogasActionPerformed
 
-    private void mnPreciosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnPreciosActionPerformed
-        Precios pr = new Precios (this ,true);
-        pr.setVisible(true);
-    }//GEN-LAST:event_mnPreciosActionPerformed
-
     private void cmdSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdSalirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_cmdSalirActionPerformed
 
     private void jCheckBoxMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem1ActionPerformed
-       Alquilar a = new Alquilar (this, true);
+       Alquilar2 a = new Alquilar2 (this, true);
        a.setVisible(true);
     }//GEN-LAST:event_jCheckBoxMenuItem1ActionPerformed
 
@@ -397,8 +387,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem mnMedidasHombre;
     private javax.swing.JMenuItem mnMedidasdeMujer;
     private javax.swing.JMenu mnOpciones;
-    private javax.swing.JMenuItem mnPrecios;
-    private javax.swing.JMenu mnPrecioss;
     private javax.swing.JMenuItem mnSalir;
     // End of variables declaration//GEN-END:variables
 }
